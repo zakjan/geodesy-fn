@@ -1,0 +1,22 @@
+{
+  "name": "geodesy-fn",
+  "version": "1.0.0",
+  "description": "Geodesic functions for GeoJSON, based on geodesy",
+  "keywords": [
+    "geodesic",
+    "geodesy",
+    "geojson"
+  ],
+  "license": "MIT",
+  "author": "Jan Zak <zj@zakjan.cz>",
+  "repository": "github:zakjan/geodesy-fn",
+  "type": "module",
+  "scripts": {
+    "test": "tape 'src/**/*.test.js'"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.8",
+    "tape": "^5.3.1",
+    "typescript": "^4.4.4"
+  }
+}
