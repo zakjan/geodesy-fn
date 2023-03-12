@@ -1,6 +1,6 @@
 {
   "name": "geodesy-fn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Geodesic functions for GeoJSON, based on geodesy",
   "keywords": [
     "geodesic",
