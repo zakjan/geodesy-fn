@@ -11,12 +11,41 @@
   "author": "Jan Zak <zj@zakjan.cz>",
   "repository": "github:zakjan/geodesy-fn",
   "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/geodesy-fn.cjs.js",
+      "import": "./dist/geodesy-fn.esm.js",
+      "script": "./dist/geodesy-fn.umd.min.js",
+      "types": "./dist/geodesy-fn.d.ts"
+    }
+  },
+  "main": "./dist/geodesy-fn.cjs.js",
+  "module": "./dist/geodesy-fn.esm.js",
+  "browser": "./dist/geodesy-fn.umd.min.js",
+  "types": "./dist/geodesy-fn.d.ts",
   "scripts": {
-    "test": "tape 'src/**/*.test.js'"
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build",
+    "test": "TEST_EXTENSIONS=.test.ts ts-node-test src"
   },
   "devDependencies": {
-    "@types/geojson": "^7946.0.8",
-    "tape": "^5.3.1",
-    "typescript": "^4.4.4"
+    "@babel/core": "^7.23.0",
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/runtime": "^7.23.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/geojson": "^7946.0.11",
+    "rimraf": "^5.0.5",
+    "rollup": "^3.29.4",
+    "rollup-plugin-dts": "^6.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "ts-node": "^10.9.1",
+    "ts-node-test": "^0.4.3",
+    "typescript": "^5.2.2"
   }
 }

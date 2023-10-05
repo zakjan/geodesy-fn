@@ -17,7 +17,7 @@ import { wrap360 } from './dms.js';
  *   const d = distance(p1, p2);         // 404.3×10³ m
  *   const m = distanceTo(p1, p2, 3959); // 251.2 miles
  */
-export function distance(start, destination, radius = DEFAULT_RADIUS) {
+export function distance(start: GeoJSON.Position, destination: GeoJSON.Position, radius: number = DEFAULT_RADIUS): number {
   // a = sin²(Δφ/2) + cos(φ1)⋅cos(φ2)⋅sin²(Δλ/2)
   // δ = 2·atan2(√(a), √(1−a))
   // see mathforum.org/library/drmath/view/51879.html for derivation
@@ -47,7 +47,7 @@ export function distance(start, destination, radius = DEFAULT_RADIUS) {
  *   const p2 = [2.351, 48.857];
  *   const b1 = initialBearing(p1, p2); // 156.2°
  */
-export function initialBearing(start, destination) {
+export function initialBearing(start: GeoJSON.Position, destination: GeoJSON.Position): number {
   if (equals(start, destination)) return NaN; // coincident points
 
   // tanθ = sinΔλ⋅cosφ2 / cosφ1⋅sinφ2 − sinφ1⋅cosφ2⋅cosΔλ
@@ -79,7 +79,7 @@ export function initialBearing(start, destination) {
  *   const p2 = [2.351, 48.857];
  *   const b2 = finalBearing(p1, p2); // 157.9°
  */
-export function finalBearing(start, destination) {
+export function finalBearing(start: GeoJSON.Position, destination: GeoJSON.Position): number {
   // get initial bearing from destination point to this point & reverse it by adding 180°
 
   const bearing = initialBearing(destination, start) + 180;
@@ -99,7 +99,7 @@ export function finalBearing(start, destination) {
  *   const p2 = [2.351, 48.857];
  *   const pMid = midpoint(p1, p2); // [1.2746, 50.5363]
  */
-export function midpoint(start, destination) {
+export function midpoint(start: GeoJSON.Position, destination: GeoJSON.Position): GeoJSON.Position {
   // φm = atan2( sinφ1 + sinφ2, √( (cosφ1 + cosφ2⋅cosΔλ)² + cos²φ2⋅sin²Δλ ) )
   // λm = λ1 + atan2(cosφ2⋅sinΔλ, cosφ1 + cosφ2⋅cosΔλ)
   // midpoint is sum of vectors to two points: mathforum.org/library/drmath/view/51822.html
@@ -139,7 +139,7 @@ export function midpoint(start, destination) {
  *   const p1 = [-0.00147, 51.47788];
  *   const p2 = destinationPoint(p1, 7794, 300.7); // [0.0983, 51.5136]
  */
-export function destinationPoint(start, distance, bearing, radius = DEFAULT_RADIUS) {
+export function destinationPoint(start: GeoJSON.Position, distance: number, bearing: number, radius: number = DEFAULT_RADIUS): GeoJSON.Position {
   // sinφ2 = sinφ1⋅cosδ + cosφ1⋅sinδ⋅cosθ
   // tanΔλ = sinθ⋅sinδ⋅cosφ1 / cosδ−sinφ1⋅sinφ2
   // see mathforum.org/library/drmath/view/52049.html for derivation
