@@ -26,26 +26,25 @@
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "dev": "rollup -c -w",
-    "prepublishOnly": "npm run build",
-    "test": "TEST_EXTENSIONS=.test.ts ts-node-test src"
+    "test": "tsx --test src/**/*.test.ts",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
-    "@babel/plugin-transform-runtime": "^7.22.15",
-    "@babel/preset-env": "^7.22.20",
-    "@babel/runtime": "^7.23.1",
+    "@babel/core": "^7.28.0",
+    "@babel/plugin-transform-runtime": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/runtime": "^7.28.2",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.5",
-    "@rollup/plugin-node-resolve": "^15.2.2",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/geojson": "^7946.0.11",
-    "rimraf": "^5.0.5",
-    "rollup": "^3.29.4",
-    "rollup-plugin-dts": "^6.0.2",
+    "@types/geojson": "^7946.0.16",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.46.2",
+    "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-typescript2": "^0.36.0",
-    "rollup-plugin-visualizer": "^5.9.2",
-    "ts-node": "^10.9.1",
-    "ts-node-test": "^0.4.3",
-    "typescript": "^5.2.2"
+    "rollup-plugin-visualizer": "^6.0.3",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
   }
 }
