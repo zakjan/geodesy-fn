@@ -13,10 +13,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/geodesy-fn.cjs.js",
-      "import": "./dist/geodesy-fn.esm.js",
+      "types": "./dist/geodesy-fn.d.ts",
       "script": "./dist/geodesy-fn.umd.min.js",
-      "types": "./dist/geodesy-fn.d.ts"
+      "import": "./dist/geodesy-fn.esm.js",
+      "require": "./dist/geodesy-fn.cjs.js",
+      "default": "./dist/geodesy-fn.esm.js"
     }
   },
   "main": "./dist/geodesy-fn.cjs.js",
