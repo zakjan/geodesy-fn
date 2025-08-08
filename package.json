@@ -15,13 +15,13 @@
     ".": {
       "types": "./dist/geodesy-fn.d.ts",
       "script": "./dist/geodesy-fn.umd.min.js",
-      "import": "./dist/geodesy-fn.esm.js",
-      "require": "./dist/geodesy-fn.cjs.js",
-      "default": "./dist/geodesy-fn.esm.js"
+      "import": "./dist/geodesy-fn.js",
+      "require": "./dist/geodesy-fn.cjs",
+      "default": "./dist/geodesy-fn.js"
     }
   },
-  "main": "./dist/geodesy-fn.cjs.js",
-  "module": "./dist/geodesy-fn.esm.js",
+  "main": "./dist/geodesy-fn.cjs",
+  "module": "./dist/geodesy-fn.js",
   "browser": "./dist/geodesy-fn.umd.min.js",
   "types": "./dist/geodesy-fn.d.ts",
   "scripts": {
