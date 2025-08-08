@@ -10,7 +10,9 @@
     "resolveJsonModule": true,
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true
   },
   "include": [
     "./src/**/*.ts"
@@ -18,8 +20,5 @@
   "exclude": [
     "./src/**/*.test.ts",
     "node_modules"
-  ],
-  "ts-node": {
-    "files": true
-  }
+  ]
 }
