@@ -29,7 +29,7 @@ npm install geodesy-fn
 ## Usage
 
 ```
-import { distance } from 'geodesy-fn/src/spherical';
+import { distance } from 'geodesy-fn';
 
 const p1 = [0.119, 52.205];
 const p2 = [2.351, 48.857];

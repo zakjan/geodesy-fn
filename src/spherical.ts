@@ -14,8 +14,8 @@ import { wrap360 } from './dms.js';
  * @example
  *   const p1 = [0.119, 52.205];
  *   const p2 = [2.351, 48.857];
- *   const d = distance(p1, p2);         // 404.3×10³ m
- *   const m = distanceTo(p1, p2, 3959); // 251.2 miles
+ *   const d = distance(p1, p2);       // 404.3×10³ m
+ *   const m = distance(p1, p2, 3959); // 251.2 miles
  */
 export function distance(start: GeoJSON.Position, destination: GeoJSON.Position, radius: number = DEFAULT_RADIUS): number {
   // a = sin²(Δφ/2) + cos(φ1)⋅cos(φ2)⋅sin²(Δλ/2)
